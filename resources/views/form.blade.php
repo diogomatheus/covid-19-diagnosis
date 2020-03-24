@@ -380,6 +380,8 @@
                                                 <span>Não sei</span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col s12">
                                             Você teve contato próximo com uma pessoa que seja caso SUSPEITO de novo coronavírus (Covid-19)?<br />
                                             <label>
@@ -395,6 +397,8 @@
                                                 <span>Não sei</span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col s12">
                                             Você teve contato próximo com uma pessoa que seja caso CONFIRMADO de novo coronavírus (Covid-19)?<br />
                                             <label>
@@ -410,6 +414,8 @@
                                                 <span>Não sei</span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col s12">
                                             Você teve contato com animais em áreas afetadas?<br />
                                             <label>
@@ -425,6 +431,8 @@
                                                 <span>Não sei</span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col s12">
                                             Você esteve em alguma unidade de saúde nos últimos 14 dias antes do início dos sintomas?<br />
                                             <label>
@@ -440,6 +448,8 @@
                                                 <span>Não sei</span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col s12">
                                             Você reside em local que faz uso de algum tipo de carrinho de feira ou sacola com rodinhas para trazer as compras do mercado ou da feira?<br />
                                             <label>
@@ -455,6 +465,8 @@
                                                 <span>Não sei</span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col s12">
                                             Você mora ou recebe visita de criança de até 2 (dois) anos em sua residência?<br />
                                             <label>
@@ -470,6 +482,8 @@
                                                 <span>Não sei</span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col s12">
                                             Você convive em sua residência com algum animal de estimação que passeia nas ruas (cachorro, gato, dentre outros)?<br />
                                             <label>
@@ -485,6 +499,8 @@
                                                 <span>Não sei</span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col s12">
                                             Você utiliza carro particular para apoiar seu deslocamento?<br />
                                             <label>
@@ -500,6 +516,8 @@
                                                 <span>Não sei</span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col s12">
                                             Você estaciona seu carro na garagem de sua residencia?<br />
                                             <label>
@@ -515,6 +533,8 @@
                                                 <span>Não sei</span>
                                             </label>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col s12">
                                             Você convive ou manteve contato com idosos ou gestantes?<br />
                                             <label>

@@ -4,17 +4,20 @@ Aplicação para armazenar as informações obtidas por meio do formulário de a
 
 ## Stack
 
-PHP 7.2, Lumen (PHP micro framework) e PostgreSQL
+PHP (>=7.2), Lumen (micro-framework PHP) e PostgreSQL.
 
-## Preparação do ambiente (manual)
+## Preparação do ambiente
 
-- Clonar repositório (https://github.com/diogomatheus/covid-19-diagnosis)
+- Clonar/baixar repositório do projeto (https://github.com/diogomatheus/covid-19-diagnosis)
 - Acessar diretório do projeto (covid-19-diagnosis)
 - Configurar variáveis de ambiente (.env) com base no documento .env.example
 - Instalar dependências do projeto: composer install
+- Executar aplicação usando servidor embutido: php -S localhost:8000 -t public
+- Acessar: localhost:8000
 
 ## TODO: Preparação do ambiente com Docker
 
+```
 ubuntu 16.04
 sudo apt-get install software-properties-common python-software-properties
 sudo add-apt-repository -y ppa:ondrej/php
@@ -27,6 +30,7 @@ php -r "if (hash_file('sha384', 'composer-setup.php') === 'e0012edf3e80b6978849f
 php composer-setup.php
 php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
+```
 
 ## License
 
