@@ -51,6 +51,7 @@
                                 <ul></ul>
                             </div>
                             <form action="" method="post" accept-charset="utf-8" name="covid-19-diagnosis-form" id="covid-19-diagnosis-form">
+                                <input type="hidden" name="_token" value="{{ $csrf_token }}">
                                 <div class="section">
                                     <h5 class="valign-wrapper"><i class="material-icons">person</i> Identificação</h5>
                                     <div class="row">

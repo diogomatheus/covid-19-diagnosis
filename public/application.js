@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if(!resultado) {
             	$.ajax({
 					type: 'POST',
-					url: '/storage',
+					url: '/store',
 					data: $('#covid-19-diagnosis-form').serialize(),
 					dataType: 'json'
 				});

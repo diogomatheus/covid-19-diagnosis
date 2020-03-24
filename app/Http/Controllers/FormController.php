@@ -15,15 +15,15 @@ class FormController extends Controller
      */
     public function show(Request $request)
     {
-        return view('form');
+        return view('form')->with('csrf_token', $request->session()->get('_token'));
     }
 
     /**
-     * Storage the covid-19 form data.
+     * Store the covid-19 form data.
      *
      * @return Response
      */
-    public function storage(Request $request)
+    public function store(Request $request)
     {
         $this->validate($request, [
             'nome' => 'required|max:100',

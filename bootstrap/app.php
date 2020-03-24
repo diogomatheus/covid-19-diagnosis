@@ -48,6 +48,10 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+$app->singleton(Illuminate\Session\SessionManager::class, function () use ($app) {
+    return new Illuminate\Session\SessionManager($app);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Register Config Files
@@ -80,6 +84,12 @@ $app->configure('app');
 //     'auth' => App\Http\Middleware\Authenticate::class,
 // ]);
 
+$app->middleware([
+    //other middlewares ...
+    Illuminate\Session\Middleware\StartSession::class,
+    App\Http\Middleware\VerifyCsrfToken::class,
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
@@ -94,6 +104,9 @@ $app->configure('app');
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+
+$app->configure('session');
+$app->register(Illuminate\Session\SessionServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
