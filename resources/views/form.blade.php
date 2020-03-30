@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
         <title>COVID-19 (coronavírus): Formulário de autonotificação</title>
+        <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <meta name="description" content="Formulário de autonotificação desenvolvido para analisar os sintomas reportado pelo usuário com o objetivo de recomendar ações visando o combate à COVID-19 (coronavírus).">
         <meta name="keywords" content="COVID-19, coronavírus, formulário de autonotificação, análise, sintomas, recomendação, consulta hospitalar, isolamento">

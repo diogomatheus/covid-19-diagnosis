@@ -1,0 +1,59 @@
+version: "3.4"
+services:
+  php:
+    container_name: php
+    build:
+      context: .
+      target: app
+    volumes:
+      - ./:/var/www/html
+      - /var/www/html/vendor
+    working_dir: /var/www/html/public
+    links:
+      - bd
+    ports:
+      - "8000:9000"
+    environment:
+      APP_NAME: covid-19-diagnosis
+      APP_ENV: local
+      APP_KEY: base64:hyHUpukUUigKeEsxpGeTW4UZ+Lg+WAWxcc4/BjlgNtE=
+      APP_DEBUG: "false"
+      APP_URL: http://localhost:8000
+      APP_TIMEZONE: America/Sao_Paulo
+
+      LOG_CHANNEL: stack
+      LOG_SLACK_WEBHOOK_URL:
+
+      DB_CONNECTION: pgsql
+      DB_HOST: bd
+      DB_PORT: 5432
+      DB_DATABASE: postgres
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+
+      CACHE_DRIVER: file
+      QUEUE_CONNECTION: sync
+    command: 
+      - php
+      - -S
+      - 0.0.0.0:9000
+      - -t
+      - /var/www/html/public
+
+  bd:
+    container_name: bd
+    build:
+      context: .
+      dockerfile: ./docker/database/Dockerfile
+    expose:
+      - "5432"
+    ports:
+      - "5432:5432"
+    volumes:
+      - /data/postgres
+    logging:
+      driver: json-file
+    environment: 
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
