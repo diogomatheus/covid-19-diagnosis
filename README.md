@@ -1,12 +1,12 @@
 # covid-19-diagnosis
 
-Aplicação para armazenar as informações obtidas por meio do formulário de autonotificação focado na Covid-19 (coronavírus).
+Aplicação para armazenar as informações obtidas por meio do formulário de autonotificação focado na COVID-19 (coronavírus).
 
 ## Stack
 
 PHP (>=7.2), Lumen (micro-framework PHP) e PostgreSQL.
 
-## Preparação do ambiente
+## Preparação do ambiente sem docker
 
 - Analisar seção de instalação manual de tecnologias
 - Clonar/baixar repositório do projeto (https://github.com/diogomatheus/covid-19-diagnosis)
@@ -16,17 +16,16 @@ PHP (>=7.2), Lumen (micro-framework PHP) e PostgreSQL.
 - Executar aplicação usando servidor embutido: php -S localhost:8000 -t public
 - Acessar: http://localhost:8000
 
-## Preparação do ambiente com Docker
+## Preparação do ambiente com docker
 
 - Clonar/baixar repositório do projeto (https://github.com/diogomatheus/covid-19-diagnosis)
 - Acessar diretório do projeto (covid-19-diagnosis)
-- docker-compose build && docker-compose up
+- Executar aplicação usando docker: docker-compose up
 - Acessar: http://localhost:8000
 
 ## Instalação manual de tecnologias (preparação do ambiente sem docker)
 
 ```
-ubuntu 16.04
 sudo apt-get install software-properties-common python-software-properties
 sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
@@ -43,7 +42,3 @@ sudo mv composer.phar /usr/local/bin/composer
 ## Script do banco de dados
 
 - Versão inicial disponível em /database/script.sql
-
-## License
-
-TODO
