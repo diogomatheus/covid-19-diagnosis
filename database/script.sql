@@ -4,8 +4,9 @@ CREATE TABLE diagnostico
     nome character varying(50) NOT NULL,
     nacionalidade character varying(50) NOT NULL,
     cpf character varying(50) NOT NULL,
+    sus character varying(50),
     data_nascimento date NOT NULL,
-    sexo character(1),
+    sexo character(1) NOT NULL,
     nome_mae character varying(50) NOT NULL,
     pais_residencia character varying(50) NOT NULL,
     cep character varying(50) NOT NULL,
@@ -26,5 +27,6 @@ CREATE TABLE diagnostico
     garagem_residencial character(1),
     contato_idoso_gestante character(1),
     data_diagnostico timestamp with time zone,
+    encaminhado_hospital boolean NOT NULL,
     CONSTRAINT diagnostico_pkey PRIMARY KEY (id)
 );

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        <title>Covid-19 (coronavírus): Formulário de autonotificação</title>
+        <title>COVID-19 (coronavírus): Formulário de autonotificação</title>
         <meta charset="UTF-8">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <meta name="description" content="Formulário de autonotificação desenvolvido para analisar os sintomas reportado pelo usuário com o objetivo de recomendar ações visando o combate à Covid-19 (coronavírus).">
-        <meta name="keywords" content="Covid-19, coronavírus, formulário de autonotificação, análise, sintomas, recomendação, consulta hospitalar, isolamento">
+        <meta name="description" content="Formulário de autonotificação desenvolvido para analisar os sintomas reportado pelo usuário com o objetivo de recomendar ações visando o combate à COVID-19 (coronavírus).">
+        <meta name="keywords" content="COVID-19, coronavírus, formulário de autonotificação, análise, sintomas, recomendação, consulta hospitalar, isolamento">
         <meta name="robots" content="all" />
 
         <link rel="shortcut icon" href="image/favicon.png" type="image/ico"/>
@@ -16,12 +16,12 @@
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="image/apple-touch-icon-ipad.png"/>
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="image/apple-touch-icon-iphone-retina.png"/>
 
-        <!--Import Google Icon Font-->
+        <!--Google Icon Font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!--Import materialize.css-->
+        <!--Materialize-->
         <link type="text/css" rel="stylesheet" href="plugins/materialize/css/materialize.min.css" media="screen,projection"/>
-        <!--Import application.css-->
-        <link type="text/css" rel="stylesheet" href="application.css" rel="stylesheet" />
+        <!--Application style-->
+        <link type="text/css" rel="stylesheet" href="style.css" rel="stylesheet" />
 
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -29,25 +29,34 @@
         <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
     </head>
-
     <body>
         <header>
-            <nav class="light-blue cyan darken-2">
+            <nav class="light-blue darken-3">
                 <div class="nav-wrapper">
-                    <a href="/" class="brand-logo center">Covid-19 (coronavírus)</a>
+                    <a href="{{ config('app.url') }}" class="brand-logo center">COVID-19</a>
                 </div>
             </nav>
         </header>
         <main>
             <div class="container">
-                <div class="center">
-                    <br />
-                    <img class="responsive-img" src="image/ufrj-100-anos-azul-horizontal.svg">
+                <br />
+                <div class="row">
+                    <div class="col s12">
+                        <div class="center">
+                            <img class="main-logo" src="image/logo-prefeitura.png" alt="Prefeitura da Cidade do Rio de Janeiro">
+                            <img class="main-logo" src="image/ufrj-100-anos-azul-horizontal.svg" alt="UFRJ">
+                        </div>
+                        <div class="center">
+                            <h4>COVID-19 (coronavírus): Formulário de autonotificação</h4>
+                        </div>
+                        <div id="service-notes" class="center-align">
+                            <p>Esse serviço não substitui uma avaliação realizada por um profissional de saúde.</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col s12">
                         <div id="main-content">
-                            <div class="center"><h3>Formulário de autonotificação</h3></div>
                             <div id="error-container" class="card-panel z-depth-3">
                                 <h5>Por favor, preencha os dados corretamente:</h5>
                                 <ul></ul>
@@ -66,7 +75,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col s12">
-                                                    Nacionalidade:
+                                                    <span for="nacionalidade">Nacionalidade:</span>
                                                     <label>
                                                         <input name="nacionalidade" value="Brasileiro" type="radio" class="nacionalidade_radio" />
                                                         <span>Brasileiro</span>
@@ -91,13 +100,13 @@
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <input placeholder="Ex: 31/01/2000" name="data_nascimento" id="data_nascimento_dp" type="text" class="datepicker">
+                                                    <input placeholder="Ex: 31/01/2000" name="data_nascimento" id="data_nascimento_dp" autocomplete="off" type="text" class="datepicker">
                                                     <label for="data_nascimento_dp">Data de nascimento</label>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col s12">
-                                                    Sexo:
+                                                    <span for="sexo">Sexo:</span>
                                                     <label>
                                                         <input name="sexo" value="Masculino" type="radio" class="sexo_radio" />
                                                         <span>Masculino</span>
@@ -118,7 +127,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col s12">
-                                                    Pais de residência:
+                                                    <span for="pais_residencia">Pais de residência:</span>
                                                     <label>
                                                         <input name="pais_residencia" value="Brasil" type="radio" class="pais_radio" />
                                                         <span>Brasil</span>
@@ -143,15 +152,15 @@
                                             </div>
                                             <div class="row">
                                                 <div class="input-field col s12">
-                                                    <select name="ocupacao">
-                                                        <option value="" disabled selected>Selecione uma opção</option>
-                                                        <option>Profissional de saúde</option>
-                                                        <option>Estudante da área de saúde</option>
-                                                        <option>Profissional de laboratório</option>
-                                                        <option>Trabalha em contato com animais</option>
-                                                        <option>Outros</option>
+                                                    <select id="ocupacao" name="ocupacao">
+                                                        <option value="">Selecione uma opção</option>
+                                                        <option value="Profissional de saúde">Profissional de saúde</option>
+                                                        <option value="Estudante da área de saúde">Estudante da área de saúde</option>
+                                                        <option value="Profissional de laboratório">Profissional de laboratório</option>
+                                                        <option value="Trabalha em contato com animais">Trabalha em contato com animais</option>
+                                                        <option value="Outros">Outros</option>
                                                     </select>
-                                                    <label>Qual é a sua ocupação?</label>
+                                                    <label for="ocupacao">Qual é a sua ocupação?</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -162,13 +171,13 @@
                                     <h5 class="valign-wrapper"><i class="material-icons">assignment</i> Dados clínicos</h5>
                                     <div class="row">
                                         <div class="input-field col s12">
-                                            <input placeholder="Ex: 31/01/2000" name="data_sintoma" id="data_sintoma_dp" type="text" class="datepicker">
+                                            <input placeholder="Ex: 31/01/2000" name="data_sintoma" id="data_sintoma_dp" type="text" autocomplete="off" class="datepicker">
                                             <label for="data_sintoma_dp">Data dos primeiros sintomas</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Selecione os sintomas apresentados:
+                                            <span for="sintomas[]">Selecione os sintomas apresentados:</span>
                                             <div class="row">
                                                 <div class="col l6 s12">
                                                     <p>
@@ -299,7 +308,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Doenças prévias (selecionar todas doenças pertinentes):
+                                            <span for="doencas[]">Doenças prévias (selecionar todas doenças pertinentes):</span>
                                             <div class="row">
                                                 <div class="col l6 s12">
                                                     <p>
@@ -368,7 +377,8 @@
                                     <h5 class="valign-wrapper"><i class="material-icons">flight</i> Dados de exposição e viagens</h5>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você realizou alguma viagem para fora do brasil nos últimos 14 dias antes do início dos sintomas?<br />
+                                            <span for="historico_viagem">Você realizou alguma viagem para fora do brasil nos últimos 14 dias antes do início dos sintomas?</span>
+                                            <br />
                                             <label>
                                                 <input name="historico_viagem" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -385,7 +395,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você teve contato próximo com uma pessoa que seja caso SUSPEITO de novo coronavírus (Covid-19)?<br />
+                                            <span for="contato_suspeito">Você teve contato próximo com uma pessoa que seja caso SUSPEITO de novo coronavírus (COVID-19)?</span>
+                                            <br />
                                             <label>
                                                 <input name="contato_suspeito" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -402,7 +413,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você teve contato próximo com uma pessoa que seja caso CONFIRMADO de novo coronavírus (Covid-19)?<br />
+                                            <span for="contato_confirmado">Você teve contato próximo com uma pessoa que seja caso CONFIRMADO de novo coronavírus (COVID-19)?</span>
+                                            <br />
                                             <label>
                                                 <input name="contato_confirmado" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -419,7 +431,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você teve contato com animais em áreas afetadas?<br />
+                                            <span for="contato_animal">Você teve contato com animais em áreas afetadas?</span>
+                                            <br />
                                             <label>
                                                 <input name="contato_animal" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -436,7 +449,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você esteve em alguma unidade de saúde nos últimos 14 dias antes do início dos sintomas?<br />
+                                            <span for="historico_unidade_saude">Você esteve em alguma unidade de saúde nos últimos 14 dias antes do início dos sintomas?</span>
+                                            <br />
                                             <label>
                                                 <input name="historico_unidade_saude" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -453,7 +467,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você reside em local que faz uso de algum tipo de carrinho de feira ou sacola com rodinhas para trazer as compras do mercado ou da feira?<br />
+                                            <span for="carrinho_sacola_roda">Você reside em local que faz uso de algum tipo de carrinho de feira ou sacola com rodinhas para trazer as compras do mercado ou da feira?</span>
+                                            <br />
                                             <label>
                                                 <input name="carrinho_sacola_roda" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -470,7 +485,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você mora ou recebe visita de criança de até 2 (dois) anos em sua residência?<br />
+                                            <span for="convivencia_crianca">Você mora ou recebe visita de criança de até 2 (dois) anos em sua residência?</span>
+                                            <br />
                                             <label>
                                                 <input name="convivencia_crianca" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -487,7 +503,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você convive em sua residência com algum animal de estimação que passeia nas ruas (cachorro, gato, dentre outros)?<br />
+                                            <span for="animal_estimacao">Você convive em sua residência com algum animal de estimação que passeia nas ruas (cachorro, gato, dentre outros)?</span>
+                                            <br />
                                             <label>
                                                 <input name="animal_estimacao" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -504,7 +521,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você utiliza carro particular para apoiar seu deslocamento?<br />
+                                            <span for="carro_particular">Você utiliza carro particular para apoiar seu deslocamento?</span>
+                                            <br />
                                             <label>
                                                 <input name="carro_particular" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -521,7 +539,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você estaciona seu carro na garagem de sua residencia?<br />
+                                            <span for="garagem_residencial">Você estaciona seu carro na garagem de sua residencia?</span>
+                                            <br />
                                             <label>
                                                 <input name="garagem_residencial" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -538,7 +557,8 @@
                                     </div>
                                     <div class="row">
                                         <div class="col s12">
-                                            Você convive ou manteve contato com idosos ou gestantes?<br />
+                                            <span for="contato_idoso_gestante">Você convive ou manteve contato com idosos ou gestantes?</span>
+                                            <br />
                                             <label>
                                                 <input name="contato_idoso_gestante" value="Sim" type="radio" />
                                                 <span>Sim</span>
@@ -557,7 +577,7 @@
                                 <div>
                                     <div class="row">
                                         <div class="col m6 s12 center-align">
-                                            <button class="waves-effect waves-light btn-large" type="reset">Limpar os dados</button>
+                                            <button id="covid-19-diagnosis-form-reset" class="waves-effect waves-light btn-large" type="button">Limpar os dados</button>
                                             <div class="show-on-small">
                                                 <br />
                                             </div>
@@ -574,46 +594,76 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col s12"><h4>Parceiros</h4></div>
+                    <div class="col s12">
+                        <div class="center-align">
+                            <a href="http://labnet.nce.ufrj.br/">
+                                <img class="responsive-img" src="image/logo-labnet.jpeg" alt="LabNet" title="LabNet" style="max-width: 100px; margin-left: 40px;">
+                            </a>
+                            <a href="http://lens.cos.ufrj.br/es/">
+                                <img class="responsive-img" src="image/logo-lens.gif" alt="Laboratório LENS" title="Laboratório LENS" style="max-width: 250px; margin-left: 40px;">
+                            </a>
+                            <a href="http://reuse.cos.ufrj.br/">
+                                <img class="responsive-img" src="image/logo-software-reuse-team.png" alt="Grupo de Reutilização de Software (COPPE/UFRJ)" title="Grupo de Reutilização de Software (COPPE/UFRJ)" style="max-width: 150px; margin-left: 30px;">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="center-align">
+                            <a href="https://coppe.ufrj.br/">
+                                <img class="responsive-img" src="image/logo-coppe.png" alt="COPPE" title="COPPE" style="max-width: 120px; margin-left: 25px;">
+                            </a>
+                            <a href="https://www.cos.ufrj.br/">
+                                <img class="responsive-img" src="image/logo-pesc.png" alt="PESC" title="PESC" style="max-width: 120px; margin-left: 35px;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
-        <footer class="page-footer cyan darken-2">
+        <footer class="page-footer light-blue darken-3">
             <div class="container">
                 <div class="row">
                     <div class="col s6">
-                        <h5 class="white-text">Covid-19 (coronavírus): Formulário de autonotificação</h5>
-                        <p class="grey-text text-lighten-4">Formulário desenvolvido para analisar os sintomas reportado pelo usuário com o objetivo de recomendar ações visando o combate à Covid-19 (coronavírus).</p>
+                        <h5 class="white-text">COVID-19 (coronavírus): Formulário de autonotificação</h5>
+                        <p class="grey-text text-lighten-4">Formulário desenvolvido para analisar os sintomas reportado pelo usuário com o objetivo de recomendar ações visando o combate à COVID-19 (coronavírus).</p>
                     </div>
                     <div class="col offset-s2 s4">
                         <h5 class="white-text">Links úteis</h5>
                         <ul>
-                            <li><a class="grey-text text-lighten-3" href="https://coronavirus.saude.gov.br/">O que é Covid-19 (coronavírus)?</a></li>
-                            <li><a class="grey-text text-lighten-3" href="https://www.who.int/health-topics/coronavirus">OMS Covid-19 (coronavírus)</a></li>
-                            <li><a class="grey-text text-lighten-3" href="https://www.bing.com/covid">Bing Covid-19 Tracker</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://coronavirus.saude.gov.br/">O que é COVID-19 (coronavírus)?</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://www.who.int/health-topics/coronavirus">OMS COVID-19 (coronavírus)</a></li>
+                            <li><a class="grey-text text-lighten-3" href="https://www.bing.com/covid">Bing COVID-19 Tracker</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="footer-copyright">
                 <div class="container center-align">
-                    © 2020, enfrentamento à Covid-19 (coronavírus).
+                    © 2020, enfrentamento à COVID-19 (coronavírus).
                 </div>
             </div>
         </footer>
 
-        <!-- jquery -->
+        <script>
+            const APP_URL = "{{ config('app.url') }}";
+        </script>
+
+        <!--jQuery 3.1.1 -->
         <script type="text/javascript" src="plugins/jquery/jquery-3.1.1.js"></script>
 
-        <!--JavaScript at end of body for optimized loading-->
+        <!--Materialize-->
         <script type="text/javascript" src="plugins/materialize/js/materialize.min.js"></script>
 
-        <!-- jquery validation -->
+        <!--jQuery Validation Plugin-->
         <script type="text/javascript" src="plugins/jquery-validation/jquery.validate.min.js"></script>
         <script type="text/javascript" src="plugins/jquery-validation/additional-methods.min.js"></script>
 
-        <!-- jquery formatter -->
+        <!--Cleave.js-->
         <script type="text/javascript" src="plugins/cleave/cleave.min.js"></script>   
 
-        <!-- application -->
-        <script type="text/javascript" src="application.js"></script>
+        <!--Application script-->
+        <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
