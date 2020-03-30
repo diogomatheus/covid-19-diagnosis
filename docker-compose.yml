@@ -1,17 +1,5 @@
 version: "3.4"
 services:
-  # nginx:
-  #   container_name: nginx
-  #   build:
-  #     context: ./images/nginx
-  #   command: nginx -g "daemon off;"
-  #   links:
-  #     - php
-  #   ports:
-  #     - "80:80"
-  #   volumes:
-  #     - ./public:/var/www/html/public
-
   php:
     container_name: php
     build:
@@ -24,13 +12,13 @@ services:
     links:
       - bd
     ports:
-      - "8080:9000"
+      - "8000:9000"
     environment:
       APP_NAME: covid-19-diagnosis
       APP_ENV: local
       APP_KEY: base64:hyHUpukUUigKeEsxpGeTW4UZ+Lg+WAWxcc4/BjlgNtE=
       APP_DEBUG: "false"
-      APP_URL: http://localhost
+      APP_URL: http://localhost:8000
       APP_TIMEZONE: America/Sao_Paulo
 
       LOG_CHANNEL: stack
@@ -45,7 +33,6 @@ services:
 
       CACHE_DRIVER: file
       QUEUE_CONNECTION: sync
-    # command: php-fpm
     command: 
       - php
       - -S
@@ -57,7 +44,7 @@ services:
     container_name: bd
     build:
       context: .
-      dockerfile: ./images/database/Dockerfile
+      dockerfile: ./docker/database/Dockerfile
     expose:
       - "5432"
     volumes:

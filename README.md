@@ -8,14 +8,22 @@ PHP (>=7.2), Lumen (micro-framework PHP) e PostgreSQL.
 
 ## Preparação do ambiente
 
+- Analisar seção de instalação manual de tecnologias
 - Clonar/baixar repositório do projeto (https://github.com/diogomatheus/covid-19-diagnosis)
 - Acessar diretório do projeto (covid-19-diagnosis)
 - Configurar variáveis de ambiente (.env) com base no documento .env.example
 - Instalar dependências do projeto: composer install
 - Executar aplicação usando servidor embutido: php -S localhost:8000 -t public
-- Acessar: localhost:8000
+- Acessar: http://localhost:8000
 
-## TODO: Preparação do ambiente com Docker
+## Preparação do ambiente com Docker
+
+- Clonar/baixar repositório do projeto (https://github.com/diogomatheus/covid-19-diagnosis)
+- Acessar diretório do projeto (covid-19-diagnosis)
+- docker-compose build && docker-compose up
+- Acessar: http://localhost:8000
+
+## Instalação manual de tecnologias (preparação do ambiente sem docker)
 
 ```
 ubuntu 16.04
