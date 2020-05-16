@@ -34,16 +34,16 @@
                 <br />
                 <div class="row">
                     <div class="col s12">
-                        <div class="center-align">
-                            <img class="main-logo" src="image/UFRJ-logo.png" alt="UFRJ" style="width: 120px;">
-                            <img class="main-logo" src="image/PR4-logo.png" alt="PR4" style="width: 180px; margin-left: 25px;">
-                            <img class="main-logo" src="image/CTPS-logo.png" alt="CTPS" style="width: 140px; margin-left: 25px;">
-                        </div>
                         <div class="center">
                             <h4>COVID-19 (coronavírus): Formulário de notificação</h4>
                         </div>
                         <div id="service-notes" class="center-align">
                             <p>As recomendações sugeridas por este serviço não substitui uma avaliação realizada por um profissional de saúde.</p>
+                        </div>
+                        <div class="center-align">
+                            <img class="main-logo" src="image/UFRJ-logo.png" alt="UFRJ" style="width: 120px;">
+                            <img class="main-logo" src="image/PR4-logo.png" alt="PR4" style="width: 180px; margin-left: 25px;">
+                            <img class="main-logo" src="image/CTPS-logo.png" alt="CTPS" style="width: 140px; margin-left: 25px;">
                         </div>
                     </div>
                 </div>
