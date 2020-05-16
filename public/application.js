@@ -262,6 +262,7 @@ function config_form_validation() {
             if (errors) $('html, body').animate({ scrollTop: 0 }, 'fast');
         },
         submitHandler: function(form) {
+        	$('#loading').show();
         	var birthdate = $('#data_nascimento_input').val();
 			var symptoms = get_symptoms();
         	var diagnosis = analyze_data(symptoms, birthdate);
