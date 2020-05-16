@@ -11,7 +11,9 @@
     "require": {
         "php": "^7.2.5",
         "illuminate/session": "^7.2",
-        "laravel/lumen-framework": "^7.0"
+        "laravel/lumen-framework": "^7.0",
+        "league/flysystem": "^1.0",
+        "ramsey/uuid": "^4.0"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.9.1",

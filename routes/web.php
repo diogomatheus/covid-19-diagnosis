@@ -15,6 +15,6 @@ $router->get('/', [
     'as' => 'form', 'uses' => 'FormController@show'
 ]);
 
-$router->post('/store', [
-    'as' => 'store', 'uses' => 'FormController@store'
+$router->post('/resultado', [
+    'as' => 'result', 'uses' => 'FormController@result'
 ]);
