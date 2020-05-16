@@ -28,7 +28,6 @@
         <![endif]-->
     </head>
     <body>
-        <div id="loading"></div>
         <main>
             <div class="container">
                 <br />
