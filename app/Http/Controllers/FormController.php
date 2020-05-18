@@ -33,11 +33,8 @@ class FormController extends Controller
         // Store form data
         $this->storeFormData($request);
 
-        // Format result data
-        $viewData = $this->formatResultData($request);
-
         // Display result
-        return view('result', $viewData);
+        return view('result');
     }
 
     /**
@@ -46,7 +43,6 @@ class FormController extends Controller
     private function validateFormData(Request $request)
     {
         $this->validate($request, [
-            'diagnostico' => 'required|max:50',
             'nome' => 'required|max:100',
             'email' => 'required|max:255',
             'nacionalidade' => 'required|max:50',
@@ -115,7 +111,6 @@ class FormController extends Controller
         DB::insert(
             'INSERT INTO public.notificacao 
             (
-                diagnostico,
                 nome,
                 email,
                 nacionalidade,
@@ -176,11 +171,9 @@ class FormController extends Controller
             (
                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )',
             [
-                // Generated data
-                $request->input('diagnostico'),
                 // Identificação
                 $request->input('nome'),
                 $request->input('email'),
@@ -242,42 +235,6 @@ class FormController extends Controller
                 $request->input('estado_atual')
             ]
         );
-    }
-
-    /**
-     * Format result data.
-     *
-     * @return array
-     */
-    private function formatResultData(Request $request)
-    {
-        $title_color = null;
-        $title_icon = null;
-        $message = null;
-        switch($request->input('diagnostico')) {
-            case 'SG':
-                $title_color = 'orange';
-                $title_icon = 'warning';
-                $message = 'Com base nos dados fornecidos, existe uma suspeita de COVID-19 (coronavírus) relacionada com os sintomas de Síndorme Gripal (SG). Considere realizar uma consulta no hospital mais próximo, principalmente, em caso de evolução dos sintomas.';
-                break;
-            case 'SRAG':
-                $title_color = 'orange';
-                $title_icon = 'warning';
-                $message = 'Com base nos dados fornecidos, existe uma suspeita de COVID-19 (coronavírus) relacionada com os sintomas de Síndrome Respiratória Aguda Grave (SRAG). Por favor, dirija-se ao hospital mais próximo.';
-                break;
-            default:
-                $title_color = 'green';
-                $title_icon = 'check';
-                $message = 'Com base nos dados fornecidos, não há suspeita de de COVID-19 (coronavírus). Continue seguindo as instruções do ministério da saúde.';
-                break;
-        }
-
-        return [
-            'title_icon' => $title_icon,
-            'title_color' => $title_color,
-            'name' => $request->input('nome'),
-            'message' => $message
-        ];
     }
 
     /**

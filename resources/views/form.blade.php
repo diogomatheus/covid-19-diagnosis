@@ -34,16 +34,13 @@
                 <br />
                 <div class="row">
                     <div class="col s12">
-                        <div class="center">
-                            <h4>COVID-19 (coronavírus): Formulário de notificação</h4>
-                        </div>
-                        <div id="service-notes" class="center-align">
-                            <p>As recomendações sugeridas por este serviço não substitui uma avaliação realizada por um profissional de saúde.</p>
-                        </div>
                         <div class="center-align">
                             <img class="main-logo" src="image/UFRJ-logo.png" alt="UFRJ" style="width: 120px;">
                             <img class="main-logo" src="image/PR4-logo.png" alt="PR4" style="width: 180px; margin-left: 25px;">
                             <img class="main-logo" src="image/CTPS-logo.png" alt="CTPS" style="width: 140px; margin-left: 25px;">
+                        </div>
+                        <div class="center">
+                            <h4>COVID-19 (coronavírus): Formulário de notificação</h4>
                         </div>
                     </div>
                 </div>
@@ -56,7 +53,6 @@
                             </div>
                             <form action="{{ route('result') }}" method="post" enctype="multipart/form-data" accept-charset="utf-8" name="covid-19-diagnosis-form" id="covid-19-diagnosis-form">
                                 <input type="hidden" name="_token" value="{{ $csrf_token }}">
-                                <input type="hidden" id="diagnostico" name="diagnostico">
                                 <div class="section">
                                     <h5 class="valign-wrapper"><i class="material-icons">person</i> Identificação</h5>
                                     <div class="row">
@@ -1097,7 +1093,6 @@
 
         <!--Application scripts-->
         <script>const APP_URL = "{{ config('app.url') }}";</script>
-        <script type="text/javascript" src="symptom-analyzer.js"></script>
         <script type="text/javascript" src="application.js"></script>
     </body>
 </html>
