@@ -1092,7 +1092,6 @@
         <script type="text/javascript" src="plugins/cleave/addons/cleave-phone.i18n.js"></script>
 
         <!--Application scripts-->
-        <script>const APP_URL = "{{ config('app.url') }}";</script>
         <script type="text/javascript" src="application.js"></script>
     </body>
 </html>
