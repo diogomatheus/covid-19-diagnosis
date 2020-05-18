@@ -139,7 +139,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col s12">
-                                                    <span for="pais_residencia">Pais de residência:</span>
+                                                    <span for="pais_residencia">País de residência:</span>
                                                     <label>
                                                         <input name="pais_residencia" value="Brasil" type="radio" class="pais_radio" />
                                                         <span>Brasil</span>
