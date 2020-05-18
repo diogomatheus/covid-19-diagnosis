@@ -263,10 +263,6 @@ function config_form_validation() {
         },
         submitHandler: function(form) {
         	$('#loading').fadeIn('slow');
-        	var birthdate = $('#data_nascimento_input').val();
-			var symptoms = get_symptoms();
-        	var diagnosis = analyze_data(symptoms, birthdate);
-        	$('#diagnostico').val(diagnosis);
         	form.submit();
         }
 	});

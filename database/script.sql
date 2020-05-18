@@ -2,7 +2,6 @@ CREATE TABLE notificacao
 (
     id bigserial NOT NULL,
     data_notificacao timestamp with time zone DEFAULT CURRENT_TIMESTAMP,
-    diagnostico character varying(50) NOT NULL,
     -- Identificação
     nome character varying(100) NOT NULL,
     email character varying(100) NOT NULL,

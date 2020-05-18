@@ -1,6 +1,6 @@
-# covid-19-diagnosis
+# covid-19-notification
 
-Aplicação para armazenar as informações obtidas por meio do formulário de autonotificação focado na COVID-19 (coronavírus).
+Aplicação para armazenar os dados de notificações obtidas por meio do formulário focado no enfrentamento à COVID-19 (coronavírus).
 
 ## Stack
 
