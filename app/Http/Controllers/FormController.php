@@ -11,7 +11,7 @@ class FormController extends Controller
 {
     
     /**
-     * Present the covid-19 diagnosis form.
+     * Present the covid-19 notification form.
      *
      * @return Response
      */
@@ -52,6 +52,7 @@ class FormController extends Controller
             'siape' => 'max:50',
             'sexo' => 'required|max:50',
             'nome_mae' => 'required|max:100',
+            'telefone' => 'required|max:50',
             'pais_residencia' => 'required|max:50',
             'cep' => 'required|max:50',
             'endereco' => 'required|max:255',
@@ -61,8 +62,9 @@ class FormController extends Controller
             'data_sintoma' => 'required',
             'gestacao_amamentacao' => 'required',
             'sintomas' => 'required',
-            'outros_sintomas' => 'max:100',
+            'outros_sintomas' => 'max:255',
             'doencas' => 'required',
+            'outras_doencas' => 'max:255',
             'trabalhando_atualmente' => 'required',
             'linha_frente' => 'required',
             'forma_trabalho' => 'required|max:50',
@@ -82,8 +84,6 @@ class FormController extends Controller
             'historico_internacao' => 'required',
             'anexo_raiox' => 'mimes:jpeg,jpg,png,pdf',
             'anexo_tomografia' => 'mimes:jpeg,jpg,png,pdf',
-            'historico_intubacao' => 'required',
-            'historico_hemodialise' => 'required',
             'historico_testagem' => 'required',
             'anexo_swab_pcr' => 'mimes:jpeg,jpg,png,pdf',
             'anexo_teste_rapido' => 'mimes:jpeg,jpg,png,pdf',
@@ -120,6 +120,7 @@ class FormController extends Controller
                 siape,
                 sexo,
                 nome_mae,
+                telefone,
                 pais_residencia,
                 cep,
                 endereco,
@@ -131,6 +132,7 @@ class FormController extends Controller
                 sintomas,
                 outros_sintomas,
                 doencas,
+                outras_doencas,
                 trabalhando_atualmente,
                 linha_frente,
                 forma_trabalho,
@@ -171,7 +173,7 @@ class FormController extends Controller
             (
                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
                 ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
+                ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?
             )',
             [
                 // Identificação
@@ -184,6 +186,7 @@ class FormController extends Controller
                 $request->input('siape', null),
                 $request->input('sexo'),
                 $request->input('nome_mae'),
+                $request->input('telefone'),
                 $request->input('pais_residencia'),
                 $request->input('cep'),
                 $request->input('endereco'),
@@ -196,6 +199,7 @@ class FormController extends Controller
                 $this->formatCheckbox($request, 'sintomas'),
                 $request->input('outros_sintomas', null),
                 $this->formatCheckbox($request, 'doencas'),
+                $request->input('outras_doencas', null),
                 // Dados de exposição e viagens
                 $this->formatBasicRadioButton($request, 'trabalhando_atualmente'),
                 $this->formatBasicRadioButton($request, 'linha_frente'),
