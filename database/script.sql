@@ -63,5 +63,5 @@ CREATE TABLE notificacao
     isolamento_social character(1) NOT NULL,
     isolamento_dias integer,
     estado_atual character varying(50) NOT NULL,
-    CONSTRAINT diagnostico_pkey PRIMARY KEY (id)
+    CONSTRAINT notificacao_pkey PRIMARY KEY (id)
 );
