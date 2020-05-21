@@ -14,7 +14,7 @@ services:
     ports:
       - "8000:9000"
     environment:
-      APP_NAME: covid-19-diagnosis
+      APP_NAME: covid-19-notification
       APP_ENV: local
       APP_KEY: base64:hyHUpukUUigKeEsxpGeTW4UZ+Lg+WAWxcc4/BjlgNtE=
       APP_DEBUG: "false"
