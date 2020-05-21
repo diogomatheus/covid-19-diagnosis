@@ -9,8 +9,8 @@ PHP (>=7.2), Lumen (micro-framework PHP) e PostgreSQL.
 ## Preparação do ambiente sem docker
 
 - Analisar seção de instalação manual de tecnologias
-- Clonar/baixar repositório do projeto (https://github.com/diogomatheus/covid-19-diagnosis)
-- Acessar diretório do projeto (covid-19-diagnosis)
+- Clonar/baixar repositório do projeto (https://github.com/diogomatheus/covid-19-notification)
+- Acessar diretório do projeto (covid-19-notification)
 - Configurar variáveis de ambiente (.env) com base no documento .env.example
 - Instalar dependências do projeto: composer install
 - Executar aplicação usando servidor embutido: php -S localhost:8000 -t public
@@ -18,12 +18,20 @@ PHP (>=7.2), Lumen (micro-framework PHP) e PostgreSQL.
 
 ## Preparação do ambiente com docker
 
-- Clonar/baixar repositório do projeto (https://github.com/diogomatheus/covid-19-diagnosis)
-- Acessar diretório do projeto (covid-19-diagnosis)
+- Clonar/baixar repositório do projeto (https://github.com/diogomatheus/covid-19-notification)
+- Acessar diretório do projeto (covid-19-notification)
 - Executar aplicação usando docker: docker-compose up
 - Acessar: http://localhost:8000
 
-## Instalação manual de tecnologias (preparação do ambiente sem docker)
+## Script do banco de dados
+
+- Versão inicial disponível em /database/script.sql
+
+## Diretório de armazenamento de uploads (i.e., anexos)
+
+- /storage/app/upload
+
+## Instalação manual de tecnologias no ubuntu s/ docker
 
 ```
 sudo apt-get install software-properties-common python-software-properties
@@ -38,7 +46,3 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
 ```
-
-## Script do banco de dados
-
-- Versão inicial disponível em /database/script.sql

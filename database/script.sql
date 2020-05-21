@@ -12,6 +12,7 @@ CREATE TABLE notificacao
     siape character varying(50),
     sexo character varying(50) NOT NULL,
     nome_mae character varying(100) NOT NULL,
+    telefone character varying(50) NOT NULL,
     pais_residencia character varying(50) NOT NULL,
     cep character varying(50) NOT NULL,
     endereco character varying(255) NOT NULL,
@@ -24,6 +25,7 @@ CREATE TABLE notificacao
     sintomas text[] NOT NULL,
     outros_sintomas character varying(255),
     doencas text[] NOT NULL,
+    outras_doencas character varying(255),
     -- Dados de exposição e viagens
     trabalhando_atualmente character(1) NOT NULL,
     linha_frente character(1) NOT NULL,
@@ -47,9 +49,9 @@ CREATE TABLE notificacao
     exames_internacao text[],
     anexo_raiox character varying(255),
     anexo_tomografia character varying(255),
-    historico_intubacao character(1) NOT NULL,
+    historico_intubacao character(1),
     intubacao_dias integer,
-    historico_hemodialise character(1) NOT NULL,
+    historico_hemodialise character(1),
     hemodialise_dias integer,
     historico_testagem character(1) NOT NULL,
     tipos_testagem text[],
@@ -61,5 +63,5 @@ CREATE TABLE notificacao
     isolamento_social character(1) NOT NULL,
     isolamento_dias integer,
     estado_atual character varying(50) NOT NULL,
-    CONSTRAINT diagnostico_pkey PRIMARY KEY (id)
+    CONSTRAINT notificacao_pkey PRIMARY KEY (id)
 );
